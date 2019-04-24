@@ -7,7 +7,7 @@
     tools:context=".DescricaoActivity">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageViewPerfil"
         android:layout_width="0dp"
         android:layout_height="108dp"
         android:layout_marginStart="8dp"
@@ -22,27 +22,49 @@
 
     <TextView
         android:id="@+id/textViewName"
-        android:layout_width="382dp"
-        android:layout_height="61dp"
+        android:layout_width="380dp"
+        android:layout_height="60dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:gravity="center"
-        android:text="TextView"
+        android:text="NamePoker"
         android:textSize="48sp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewPerfil"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintStart_toStartOf="@+id/imageViewPerfil"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewPerfil" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="0dp"
-        android:layout_height="62dp"
+        android:id="@+id/textViewPeso"
+        android:layout_width="380dp"
+        android:layout_height="60dp"
         android:layout_marginTop="8dp"
         android:gravity="center"
-        android:text="TextView"
+        android:text="PesoPoker"
         app:layout_constraintEnd_toEndOf="@+id/textViewName"
         app:layout_constraintStart_toStartOf="@+id/textViewName"
         app:layout_constraintTop_toBottomOf="@+id/textViewName" />
+
+    <TextView
+        android:id="@+id/textViewAltura"
+        android:layout_width="380dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="AlturaPoker"
+        app:layout_constraintEnd_toEndOf="@+id/textViewPeso"
+        app:layout_constraintStart_toStartOf="@+id/textViewPeso"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPeso" />
+
+    <TextView
+        android:id="@+id/textViewMaisDados"
+        android:layout_width="380dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:layout_marginTop="8dp"
+        android:text="Demais dados"
+        app:layout_constraintEnd_toEndOf="@+id/textViewAltura"
+        app:layout_constraintStart_toStartOf="@+id/textViewAltura"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAltura" />
 </android.support.constraint.ConstraintLayout>

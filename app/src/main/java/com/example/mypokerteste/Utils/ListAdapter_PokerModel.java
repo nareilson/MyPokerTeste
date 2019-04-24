@@ -14,7 +14,7 @@ import com.example.mypokerteste.R;
 import java.util.ArrayList;
 
 
-public class ListAdapter_PokerModel extends RecyclerView.Adapter<ListAdapter_PokerModel.ViewHolder> {
+public class   ListAdapter_PokerModel extends RecyclerView.Adapter<ListAdapter_PokerModel.ViewHolder> {
     Context context;
     ArrayList<Poker_Result> listaModel;
     OnClick onClick;
@@ -34,7 +34,6 @@ public class ListAdapter_PokerModel extends RecyclerView.Adapter<ListAdapter_Pok
         return new ViewHolder(view);
     }
 
-    @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         viewHolder.nomePoker.setText(listaModel.get(i).getName());
     }
@@ -51,12 +50,7 @@ public class ListAdapter_PokerModel extends RecyclerView.Adapter<ListAdapter_Pok
             super(itemView);
             nomePoker = itemView.findViewById(R.id.textView_Item);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    onClick.OnClickListner(listaModel.get(ViewHolder.this.getAdapterPosition()));
-                }
-            });
+            itemView.setOnClickListener(v -> onClick.OnClickListner(listaModel.get(ViewHolder.this.getAdapterPosition())));
 
         }
     }

@@ -1,5 +1,6 @@
 package com.example.mypokerteste.Model.Interface;
 
+import com.example.mypokerteste.Model.PokerDescricao;
 import com.example.mypokerteste.Model.PokerModel;
 import com.example.mypokerteste.Model.Poker_Result;
 
@@ -11,5 +12,5 @@ public interface Acesse_Servico {
     @GET("pokemon/")
     Call<PokerModel> getPokerModel();
     @GET("pokemon/{name}")
-    Call<Poker_Result> getPokemon(@Path("name") String name);
+    Call<PokerDescricao> getPokemon(@Path("name") String name);
 }

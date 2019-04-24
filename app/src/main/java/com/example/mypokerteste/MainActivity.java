@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
     ListAdapter_PokerModel listAdpter;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,13 +38,13 @@ public class MainActivity extends AppCompatActivity {
         getPoker();
     }
 
-    public void getPoker(){
+    public void getPoker() {
         Call<PokerModel> call = API_Cliente_Retrof.acesso().create(Acesse_Servico.class).getPokerModel();
         call.enqueue(new Callback<PokerModel>() {
             @Override
-            public void onResponse(@NonNull Call<PokerModel> call,@NonNull Response<PokerModel> response) {
-                if(response.isSuccessful()){
-                    Log.i("Response","Response sucesso");
+            public void onResponse(@NonNull Call<PokerModel> call, @NonNull Response<PokerModel> response) {
+                if (response.isSuccessful()) {
+                    Log.i("Response", "Response sucesso");
                     Log.e("body", response.body().getResults().toString());
                     listaPoker.addAll(response.body().getResults());
 
@@ -55,26 +54,22 @@ public class MainActivity extends AppCompatActivity {
 //                        Log.e("Pokemon Nome: ",i.getName());
 //                        listaPoker.add(i);
 //                    }
-//
-//
-                    listAdpter = new ListAdapter_PokerModel(MainActivity.this,listaPoker, item -> {
-                        Toast.makeText(MainActivity.this,item.getName(),Toast.LENGTH_LONG).show();Intent intent = new Intent(MainActivity.this, DescricaoActivity.class);
+                    listAdpter = new ListAdapter_PokerModel(MainActivity.this, listaPoker, item -> {
+                        Toast.makeText(MainActivity.this, item.getName(), Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(MainActivity.this, DescricaoActivity.class);
                         intent.putExtra("op", item);
                         startActivity(intent);
                     });
                     LinearLayoutManager linearLayoutManager = new LinearLayoutManager(MainActivity.this);
                     recyclerView.setLayoutManager(linearLayoutManager);
                     recyclerView.setAdapter(listAdpter);
-
-
                 }
-
 
             }
 
             @Override
             public void onFailure(Call<PokerModel> call, Throwable t) {
-                Log.i("ERRO","Responde sucesso");
+                Log.i("ERRO", "Responde sucesso");
             }
         });
     }
