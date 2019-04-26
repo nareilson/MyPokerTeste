@@ -53,13 +53,13 @@ public class DescricaoActivity extends AppCompatActivity {
             public void onResponse(Call<PokerDescricao> call, Response<PokerDescricao> response) {
                 if(response.isSuccessful()){
                     vrName.setText(response.body().getName());
-                    vrAltura.setText(response.body().getWeight().toString());
-                    vrPeso.setText(response.body().getHeight().toString());
-                    vrDemaisDados.setText(response.body().getBaseExperience().toString());
+                    vrAltura.setText("PESO: "+response.body().getWeight().toString());
+                    vrPeso.setText("ALTURA: "+response.body().getHeight().toString());
+                    vrDemaisDados.setText("XP: "+response.body().getBaseExperience().toString());
                     Glide.with(DescricaoActivity.this)
                             .load(response.body().getSprites().getFrontDefault())
                             .into(vrImgPerfil);
-                    Log.e("IMAGEM",response.body().getSprites()+"");
+                    Log.e("IMAGEM",response.body().getSprites().getFrontDefault()+"");
                 }
 
             }
